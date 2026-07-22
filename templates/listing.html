@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ listing['title'] }} // Retro Lab</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <h1>RETRO LAB</h1>
+    <p>// item details //</p>
+  </header>
+
+  <nav>
+    <a href="{{ url_for('index') }}">&larr; BACK TO ALL LISTINGS</a>
+  </nav>
+
+  <div class="container">
+    <div class="card" style="max-width:600px;margin:0 auto;">
+      <h3>{{ listing['title'] }}</h3>
+      <span class="condition">{{ listing['condition'] }}</span>
+      <p>Category: {{ listing['category'] }}</p>
+      <p class="price">${{ '%.2f'|format(listing['price']) }}</p>
+      <p>{{ listing['description'] }}</p>
+      <p>Seller: {{ listing['seller_name'] }}</p>
+      <p style="font-size:14px; color:#888;">Listed on {{ listing['date_added'] }}</p>
+    </div>
+  </div>
+
+  <footer>Retro Lab &mdash; ICT171 Assignment 3</footer>
+</body>
+</html>

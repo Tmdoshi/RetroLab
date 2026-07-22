@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+
+:root {
+  --bg: #14102b;
+  --panel: #1f1840;
+  --neon-pink: #ff2ea6;
+  --neon-cyan: #2ee6ff;
+  --neon-yellow: #ffe135;
+  --text: #f0eaff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'VT323', monospace;
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+  background-image:
+    linear-gradient(rgba(46, 230, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(46, 230, 255, 0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+header {
+  padding: 24px;
+  text-align: center;
+  border-bottom: 3px solid var(--neon-pink);
+}
+
+header h1 {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 28px;
+  color: var(--neon-yellow);
+  text-shadow: 3px 3px 0 var(--neon-pink);
+  margin: 0;
+}
+
+header p {
+  color: var(--neon-cyan);
+  font-size: 18px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 12px;
+}
+
+nav a, .btn {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 11px;
+  color: var(--bg);
+  background: var(--neon-cyan);
+  padding: 10px 14px;
+  text-decoration: none;
+  border-radius: 4px;
+  border: 2px solid var(--neon-cyan);
+  transition: 0.15s;
+}
+
+nav a.active, nav a:hover, .btn:hover {
+  background: var(--neon-pink);
+  border-color: var(--neon-pink);
+  color: var(--text);
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: var(--panel);
+  border: 2px solid var(--neon-cyan);
+  border-radius: 6px;
+  padding: 16px;
+}
+
+.card h3 {
+  color: var(--neon-yellow);
+  margin-top: 0;
+}
+
+.price {
+  font-family: 'Press Start 2P', monospace;
+  color: var(--neon-pink);
+  font-size: 16px;
+}
+
+.condition {
+  display: inline-block;
+  background: var(--neon-yellow);
+  color: var(--bg);
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-size: 16px;
+}
+
+form label {
+  display: block;
+  margin-top: 14px;
+  color: var(--neon-cyan);
+}
+
+form input, form select, form textarea {
+  width: 100%;
+  padding: 8px;
+  font-family: 'VT323', monospace;
+  font-size: 18px;
+  background: var(--panel);
+  color: var(--text);
+  border: 2px solid var(--neon-cyan);
+  border-radius: 4px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: var(--neon-cyan);
+  font-size: 14px;
+  border-top: 2px solid var(--neon-pink);
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Retro Lab // Marketplace</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <h1>RETRO LAB</h1>
+    <p>// the retro gaming hardware marketplace //</p>
+  </header>
+
+  <nav>
+    <a href="{{ url_for('index') }}" class="{{ 'active' if selected_category == 'All' }}">ALL</a>
+    {% for cat in categories %}
+      <a href="{{ url_for('index', category=cat) }}" class="{{ 'active' if selected_category == cat }}">{{ cat|upper }}</a>
+    {% endfor %}
+    <a href="{{ url_for('add_listing') }}">+ SELL AN ITEM</a>
+  </nav>
+
+  <div class="container">
+    <div class="grid">
+      {% for item in listings %}
+        <div class="card">
+          <h3>{{ item['title'] }}</h3>
+          <span class="condition">{{ item['condition'] }}</span>
+          <p>{{ item['category'] }}</p>
+          <p class="price">${{ '%.2f'|format(item['price']) }}</p>
+          <a href="{{ url_for('listing_detail', listing_id=item['id']) }}" class="btn">VIEW ITEM</a>
+        </div>
+      {% else %}
+        <p>No listings found in this category yet.</p>
+      {% endfor %}
+    </div>
+  </div>
+
+  <footer>Retro Lab &mdash; ICT171 Assignment 3</footer>
+</body>
+</html>
