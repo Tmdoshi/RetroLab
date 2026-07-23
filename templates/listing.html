@@ -24,6 +24,14 @@
       <p>{{ listing['description'] }}</p>
       <p>Seller: {{ listing['seller_name'] }}</p>
       <p style="font-size:14px; color:#888;">Listed on {{ listing['date_added'] }}</p>
+
+      <div style="display:flex; gap:10px; margin-top:16px;">
+        <a href="{{ url_for('edit_listing', listing_id=listing['id']) }}" class="btn">EDIT</a>
+        <form method="POST" action="{{ url_for('delete_listing', listing_id=listing['id']) }}"
+              onsubmit="return confirm('Delete this listing? This cannot be undone.');">
+          <button type="submit" class="btn" style="background:#ff2ea6; border-color:#ff2ea6;">DELETE</button>
+        </form>
+      </div>
     </div>
   </div>
 

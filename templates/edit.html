@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit {{ listing['title'] }} // Retro Lab</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <h1>RETRO LAB</h1>
+    <p>// edit listing //</p>
+  </header>
+
+  <nav>
+    <a href="{{ url_for('listing_detail', listing_id=listing['id']) }}">&larr; BACK TO ITEM</a>
+  </nav>
+
+  <div class="container">
+    <form method="POST" style="max-width:500px;margin:0 auto;">
+      <label for="title">Item Title</label>
+      <input type="text" id="title" name="title" value="{{ listing['title'] }}" required>
+
+      <label for="category">Category</label>
+      <select id="category" name="category" required>
+        {% for cat in ["Console", "Handheld", "Computer", "Accessory", "Game"] %}
+          <option value="{{ cat }}" {{ "selected" if listing['category'] == cat }}>{{ cat }}</option>
+        {% endfor %}
+      </select>
+
+      <label for="condition">Condition</label>
+      <select id="condition" name="condition" required>
+        {% for cond in ["Excellent", "Very Good", "Good", "Fair", "For Parts"] %}
+          <option value="{{ cond }}" {{ "selected" if listing['condition'] == cond }}>{{ cond }}</option>
+        {% endfor %}
+      </select>
+
+      <label for="price">Price (USD)</label>
+      <input type="number" id="price" name="price" step="0.01" min="0" value="{{ listing['price'] }}" required>
+
+      <label for="description">Description</label>
+      <textarea id="description" name="description" rows="4">{{ listing['description'] }}</textarea>
+
+      <label for="seller_name">Seller Name</label>
+      <input type="text" id="seller_name" name="seller_name" value="{{ listing['seller_name'] }}" required>
+
+      <button type="submit" class="btn" style="margin-top:20px;">SAVE CHANGES</button>
+    </form>
+  </div>
+
+  <footer>Retro Lab &mdash; ICT171 Assignment 3</footer>
+</body>
+</html>

@@ -20,6 +20,17 @@
   </nav>
 
   <div class="container">
+    <form method="GET" action="{{ url_for('index') }}" style="max-width:500px;margin:0 auto 24px;">
+      {% if selected_category and selected_category != 'All' %}
+        <input type="hidden" name="category" value="{{ selected_category }}">
+      {% endif %}
+      <input type="text" name="q" placeholder="Search listings by title..." value="{{ search_query }}">
+      <button type="submit" class="btn" style="margin-top:8px;">SEARCH</button>
+      {% if search_query %}
+        <a href="{{ url_for('index') }}" class="btn" style="margin-top:8px; background:transparent; color:var(--neon-pink);">CLEAR</a>
+      {% endif %}
+    </form>
+
     <div class="grid">
       {% for item in listings %}
         <div class="card">
@@ -30,7 +41,7 @@
           <a href="{{ url_for('listing_detail', listing_id=item['id']) }}" class="btn">VIEW ITEM</a>
         </div>
       {% else %}
-        <p>No listings found in this category yet.</p>
+        <p>No listings found{% if search_query %} matching "{{ search_query }}"{% endif %}.</p>
       {% endfor %}
     </div>
   </div>
