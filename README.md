@@ -1,7 +1,7 @@
 # Retro Lab — Cloud Server Project
 
 **Student Name:** Tanishk Doshi
-**Student Number:** [insert student number]
+**Student Number:** 36185495
 **Unit:** ICT171 — Introduction to Server Environments and Architectures
 **Live site:** https://retrolabs.online
 **IP address (Elastic IP):** 3.78.92.231
