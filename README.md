@@ -21,9 +21,6 @@ Video Walkthrough: [insert video link]
 Submitted by: Tanishk Doshi | Student Number: 36185495
 
 
-## Table of Contents
-
-
 ## Project Overview
 
 Retro Lab is a marketplace web application for buying and selling retro gaming hardware consoles, handhelds, computers, and accessories. It is built with Flask (Python) on the backend, SQLite for data storage, and is served in production through Apache using mod_wsgi, secured with a manually configured SSL/TLS certificate from Let's Encrypt.
@@ -58,7 +55,9 @@ The application is hosted on an AWS EC2 instance, configured manually via SSH no
 
 4. The specific AMI details were reviewed before confirming architecture, boot mode, and publish date.
 
-![Figure 2 — Reviewing AMI details before selection](docs/screenshots/figure_02.png)
+<img width="1915" height="921" alt="figure_02" src="https://github.com/user-attachments/assets/a06eafb3-9613-463a-9c8a-5b11581595ac" />
+
+![Figure 2 — Reviewing AMI details before selection]
 
 *Figure 2 — Reviewing AMI details before selection*
 
