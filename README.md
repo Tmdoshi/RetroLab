@@ -16,7 +16,7 @@ Website Link (Domain):  https://retrolabs.online/
 
 GitHub Repository:  https://github.com/Tmdoshi/RetroLab
 
-Video Walkthrough: [insert video link]
+Video Walkthrough: https://drive.google.com/drive/u/0/folders/1frDC-erXTJ8oK5j9isX08J1tBlVglpff
 
 Submitted by: Tanishk Doshi | Student Number: 36185495
 
@@ -196,8 +196,9 @@ cp -r temp-clone/. .
 rm -rf temp-clone
 ```
 
-![Figure 12 — Cloning the Retro Lab repository onto the server](docs/screenshots/figure_12.png)
 
+
+<img width="945" height="127" alt="image" src="https://github.com/user-attachments/assets/40164aa2-45f6-47dd-8581-34df7d5d3c24" />
 *Figure 12 — Cloning the Retro Lab repository onto the server*
 
 A temporary clone folder was used here because the virtual environment (venv) already existed in the target directory, and git clone refuses to clone directly into a non-empty folder.
@@ -213,7 +214,9 @@ Retro Lab uses SQLite to store marketplace listings. The repository includes ini
 python3 init_db.py
 ```
 
-![Figure 13 — Directory listing confirming all application files, and successful database initialization](docs/screenshots/figure_13.png)
+
+<img width="945" height="497" alt="image" src="https://github.com/user-attachments/assets/7ba14f52-f49f-408b-9a54-fabec2ce385b" />
+
 
 *Figure 13 — Directory listing confirming all application files, and successful database initialization*
 
@@ -230,7 +233,8 @@ It's important to confirm the application works correctly in isolation before in
 flask run --host=0.0.0.0
 ```
 
-![Figure 14 — Flask's development server running and serving a request on port 5000](docs/screenshots/figure_14.png)
+
+<img width="945" height="122" alt="image" src="https://github.com/user-attachments/assets/420df4af-9fe4-4273-852c-4e8aad1ddab2" />
 
 *Figure 14 — Flask's development server running and serving a request on port 5000*
 
@@ -240,7 +244,8 @@ From a second SSH session, a request was sent to confirm the server responded co
 curl localhost:5000
 ```
 
-![Figure 15 — curl output confirming the homepage HTML renders correctly](docs/screenshots/figure_15.png)
+
+<img width="945" height="458" alt="image" src="https://github.com/user-attachments/assets/9bfdba5b-a2f8-49de-ac8a-7f4531067141" />
 
 *Figure 15 — curl output confirming the homepage HTML renders correctly*
 
@@ -267,11 +272,13 @@ sudo apache2ctl configtest
 sudo systemctl reload apache2
 ```
 
-![Figure 16 — Editing the virtual host, confirming DNS resolution, and a successful configtest](docs/screenshots/figure_16.png)
+
+<img width="945" height="217" alt="image" src="https://github.com/user-attachments/assets/05fac6e3-ab6a-4e08-8ffc-3a8b6acef1f8" />
 
 *Figure 16 — Editing the virtual host, confirming DNS resolution, and a successful configtest*
 
-![Figure 17 — Full contents of the retrolab.conf virtual host file](docs/screenshots/figure_17.png)
+
+<img width="945" height="297" alt="image" src="https://github.com/user-attachments/assets/db5d9409-a499-45bb-afb9-39f4a1789841" />
 
 *Figure 17 — Full contents of the retrolab.conf virtual host file*
 
@@ -279,7 +286,7 @@ A notable issue encountered here: when SSL was later configured with Certbot, it
 
 With the configuration corrected, the site was confirmed live over plain HTTP:
 
-![Figure 18 — Retro Lab live at http://retrolabs.online, prior to SSL configuration](docs/screenshots/figure_18.png)
+<img width="945" height="477" alt="image" src="https://github.com/user-attachments/assets/0064db6f-e68e-47ea-bfb0-004f19d67659" />
 
 *Figure 18 — Retro Lab live at http://retrolabs.online, prior to SSL configuration*
 
@@ -295,7 +302,9 @@ sudo apt install -y certbot python3-certbot-apache
 sudo certbot --apache -d retrolabs.online -d www.retrolabs.online
 ```
 
-![Figure 19 — Certbot successfully obtaining and deploying the SSL certificate](docs/screenshots/figure_19.png)
+
+<img width="945" height="163" alt="image" src="https://github.com/user-attachments/assets/5425d271-043c-4290-be49-714079eac7df" />
+
 
 *Figure 19 — Certbot successfully obtaining and deploying the SSL certificate*
 
@@ -305,8 +314,8 @@ The certificate is valid for 90 days and is automatically renewed in the backgro
 sudo certbot renew --dry-run
 ```
 
-![Figure 20 — Successful renewal dry-run, confirming the auto-renewal timer works correctly](docs/screenshots/figure_20.png)
 
+<img width="945" height="272" alt="image" src="https://github.com/user-attachments/assets/b77479fc-56e2-41bc-bea4-32ce3a39a816" />
 *Figure 20 — Successful renewal dry-run, confirming the auto-renewal timer works correctly*
 
 HTTP requests were also confirmed to automatically redirect to HTTPS:
@@ -319,13 +328,14 @@ curl -I http://retrolabs.online
 
 The deployment was independently verified using the Qualys SSL Labs server test, which returned an A rating across Certificate, Protocol Support, Key Exchange, and Cipher Strength, with confirmed support for TLS 1.3:
 
-![Figure 21 — Independent SSL Labs test result: Grade A](docs/screenshots/figure_21.png)
 
+<img width="945" height="409" alt="image" src="https://github.com/user-attachments/assets/814e1075-35fb-4dc7-9aaf-771df1ec3d52" />
 *Figure 21 — Independent SSL Labs test result: Grade A*
 
 The site is now live and fully secured over HTTPS:
 
-![Figure 22 — Retro Lab live at https://retrolabs.online with a valid SSL certificate](docs/screenshots/figure_22.png)
+
+<img width="940" height="472" alt="image" src="https://github.com/user-attachments/assets/224af56b-b09f-4dbe-b0ac-7a453bcfc4f7" />
 
 *Figure 22 — Retro Lab live at https://retrolabs.online with a valid SSL certificate*
 
@@ -345,7 +355,9 @@ It queries the database directly using Python's sqlite3 module and prints a plai
 python3 scripts/validate_listings.py
 ```
 
-![Figure 23 — Running the validation script on the live server via SSH, confirming clean output against the production database](docs/screenshots/figure_23.png)
+
+<img width="945" height="322" alt="image" src="https://github.com/user-attachments/assets/fb67c681-f8a8-4ff0-a79f-6d8a9aa60d3a" />
+
 
 *Figure 23 — Running the validation script on the live server via SSH, confirming clean output against the production database*
 
