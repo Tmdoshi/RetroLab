@@ -55,10 +55,6 @@ The application is hosted on an AWS EC2 instance, configured manually via SSH no
 
 4. The specific AMI details were reviewed before confirming architecture, boot mode, and publish date.
 
-<img width="1915" height="921" alt="figure_02" src="https://github.com/user-attachments/assets/a06eafb3-9613-463a-9c8a-5b11581595ac" />
-
-*Figure 2 — Reviewing AMI details before selection*
-
 5. Under Key pair (login), a new key pair named "retrolab-sg" was created, using RSA encryption and the.pem private key format (for use with OpenSSH on Windows). The key pair was downloaded and stored securely, as it would be needed for every future SSH connection.
 
 <img width="945" height="455" alt="image" src="https://github.com/user-attachments/assets/6dd04c50-e241-4a20-baee-43183d959fdf" />
@@ -113,7 +109,9 @@ The domain retrolabs.online was registered through GoDaddy. DNS is a separate sy
 
 3. Propagation was verified using PowerShell's Resolve-DnsName cmdlet, confirming the domain correctly resolved to the Elastic IP from the local machine.
 
-![Figure 7 — Verifying DNS resolution for retrolabs. online and www.retrolabs.online](docs/screenshots/figure_07.png)
+
+<img width="1482" height="727" alt="figure_06" src="https://github.com/user-attachments/assets/5173ddd3-0350-4cda-8b9c-2c1ca0fc8457" />
+
 
 *Figure 7 — Verifying DNS resolution for retrolabs. online and www.retrolabs.online*
 
@@ -130,7 +128,8 @@ With the Elastic IP and downloaded key pair in hand, the instance was accessed v
 ssh -i retrolab-key.pem ubuntu@3.78.92.231
 ```
 
-![Figure 8 — Successful SSH connection to the Ubuntu 24.04 LTS instance](docs/screenshots/figure_08.png)
+
+<img width="1917" height="1011" alt="figure_07" src="https://github.com/user-attachments/assets/ba2db45d-8cee-4be9-8f4d-e6fbf5fb6a03" />
 
 *Figure 8 — Successful SSH connection to the Ubuntu 24.04 LTS instance*
 
@@ -149,11 +148,14 @@ sudo apt install -y apache2 python3-pip python3-venv \
   libapache2-mod-wsgi-py3 sqlite3 git
 ```
 
-![Figure 9 — Updating packages and installing Apache, Python, mod_wsgi, SQLite, and Git](docs/screenshots/figure_09.png)
+<img width="1917" height="961" alt="figure_08" src="https://github.com/user-attachments/assets/d80cfbe9-95d0-4e25-b389-631a69c5abea" />
+
 
 *Figure 9 — Updating packages and installing Apache, Python, mod_wsgi, SQLite, and Git*
 
-![Figure 10 — Installation completing, with a pending kernel upgrade notice (safe to ignore for now)](docs/screenshots/figure_10.png)
+
+<img width="1917" height="986" alt="figure_09" src="https://github.com/user-attachments/assets/a70a448b-0f63-43a9-abe1-7332f692724f" />
+
 
 *Figure 10 — Installation completing, with a pending kernel upgrade notice (safe to ignore for now)*
 
@@ -175,7 +177,9 @@ source venv/bin/activate
 pip install flask
 ```
 
-![Figure 11 — Creating the virtual environment and installing Flask](docs/screenshots/figure_11.png)
+
+<img width="1821" height="985" alt="figure_10" src="https://github.com/user-attachments/assets/dc2c79d4-e764-4f2c-a8af-c6b73486f45e" />
+
 
 *Figure 11 — Creating the virtual environment and installing Flask*
 
