@@ -57,19 +57,18 @@ The application is hosted on an AWS EC2 instance, configured manually via SSH no
 
 <img width="1915" height="921" alt="figure_02" src="https://github.com/user-attachments/assets/a06eafb3-9613-463a-9c8a-5b11581595ac" />
 
-![Figure 2 — Reviewing AMI details before selection]
-
 *Figure 2 — Reviewing AMI details before selection*
 
 5. Under Key pair (login), a new key pair named "retrolab-sg" was created, using RSA encryption and the.pem private key format (for use with OpenSSH on Windows). The key pair was downloaded and stored securely, as it would be needed for every future SSH connection.
 
-![Figure 3 — Creating the key pair for SSH access](docs/screenshots/figure_03.png)
+<img width="945" height="455" alt="image" src="https://github.com/user-attachments/assets/6dd04c50-e241-4a20-baee-43183d959fdf" />
 
 *Figure 3 — Creating the key pair for SSH access*
 
 6. Under Network settings, a new security group was created, with inbound rules allowing SSH (port 22), HTTP (port 80), and HTTPS (port 443) traffic.
 
-![Figure 4 — Configuring network settings and security group inbound rules](docs/screenshots/figure_04.png)
+
+<img width="1917" height="890" alt="figure_03" src="https://github.com/user-attachments/assets/d146f770-08e2-4949-97a5-6ebffab1f86b" />
 
 *Figure 4 — Configuring network settings and security group inbound rules*
 
@@ -88,7 +87,8 @@ By default, an EC2 instance's public IP address changes every time the instance 
 
 3. Associated the Elastic IP with the running Retro Lab instance.
 
-![Figure 5 — Elastic IP address 3.78.92.231 associated with the instance](docs/screenshots/figure_05.png)
+
+<img width="1917" height="905" alt="figure_04" src="https://github.com/user-attachments/assets/d6cf8eda-92a6-4937-9a86-a9a1bc6fc5ec" />
 
 *Figure 5 — Elastic IP address 3.78.92.231 associated with the instance*
 
@@ -105,7 +105,9 @@ The domain retrolabs.online was registered through GoDaddy. DNS is a separate sy
 
 2. A second A record was added for the www subdomain, pointing to the same Elastic IP.
 
-![Figure 6 — GoDaddy DNS panel showing the A record pointed at the Elastic IP](docs/screenshots/figure_06.png)
+
+<img width="1917" height="920" alt="figure_05" src="https://github.com/user-attachments/assets/6592120b-983c-4133-a04c-e1c50781f8e3" />
+
 
 *Figure 6 — GoDaddy DNS panel showing the A record pointed at the Elastic IP*
 
